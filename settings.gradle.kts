@@ -4,6 +4,7 @@ pluginManagement {
     repositories {
         gradlePluginPortal()  // Menambahkan Gradle Plugin Portal
         mavenCentral()
+        google()
         maven("https://repo.papermc.io/repository/maven-public/")
     }
     plugins {
