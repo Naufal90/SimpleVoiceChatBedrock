@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Simple Voice Chat</string>
+    <string name="hello_world">Hello World!</string>
+    <string name="mute">Mute</string>
+    <string name="unmute">Unmute</string>
+    <string name="enable_voice_chat">Enable Voice Chat</string>
+    <string name="disable_voice_chat">Disable Voice Chat</string>
+    <string name="server_url">Server URL</string>
+</resources>
