@@ -1,15 +1,15 @@
 // app/build.gradle.kts
 
 plugins {
-    id("com.android.application")
-    kotlin("android")
+    id("com.android.application") version "7.4.2" // Tentukan versi plugin Android
+    kotlin("android") version "1.8.0" // Tentukan versi Kotlin
 }
 
 android {
     compileSdkVersion(33) // Sesuaikan dengan versi SDK yang kamu gunakan
 
     defaultConfig {
-        applicationId = "com.yourapp.simplevoicechat"
+        applicationId = "com.naufal90.simplevoicechat"
         minSdkVersion(29) // Sesuaikan dengan minimum SDK yang diperlukan
         targetSdkVersion(33) // Sesuaikan dengan target SDK yang diinginkan
         versionCode = 1
