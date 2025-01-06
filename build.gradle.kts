@@ -1,6 +1,6 @@
 plugins {
-    id("buildlogic.kotlin-common-conventions")  // Ini sudah mencakup plugin Kotlin
-    `java-library`
+    id("com.android.application") version "8.1.0"
+    id("org.jetbrains.kotlin.android") version "1.7.10"
 }
 
 repositories {
