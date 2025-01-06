@@ -1,3 +1,8 @@
+plugins {
+    kotlin("jvm")
+    id("java-library")
+}
+
 repositories {
     maven {
         name = "papermc"
@@ -10,5 +15,7 @@ dependencies {
 }
 
 java {
-    toolchain.languageVersion.set(JavaLanguageVersion.of(11))
+    toolchain {
+        languageVersion.set(JavaLanguageVersion.of(17))
+    }
 }
