@@ -5,6 +5,7 @@ plugins {
 
 repositories {
     mavenCentral()
+    google()
     maven { url = uri("https://repo.papermc.io/repository/maven-public/") }
 }
 
