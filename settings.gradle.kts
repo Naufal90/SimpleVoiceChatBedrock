@@ -8,7 +8,16 @@ pluginManagement {
         maven("https://repo.papermc.io/repository/maven-public/")
     }
     plugins {
-        id("com.android.application") version "8.1.0"
+        id("com.android.application") version "8.1.0" apply false  // Menambahkan `apply false` untuk memastikan hanya diterapkan di subproyek yang relevan
+    }
+}
+
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+        maven("https://repo.papermc.io/repository/maven-public/")
     }
 }
 
