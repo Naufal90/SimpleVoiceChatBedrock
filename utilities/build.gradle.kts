@@ -3,7 +3,8 @@
  */
 
 plugins {
-    id("buildlogic.kotlin-library-conventions")
+    id("buildlogic.kotlin-common-conventions")  // Ini sudah mencakup plugin Kotlin
+    `java-library`
 }
 
 dependencies {
