@@ -7,7 +7,7 @@ pluginManagement {
         maven("https://repo.papermc.io/repository/maven-public/")
     }
     plugins {
-        id("com.android.application") version "7.4.2"
+        id("com.android.application") version "8.1.0"
     }
 }
 
