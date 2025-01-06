@@ -13,7 +13,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var saveUrlButton: Button
     private lateinit var muteButton: Button
     private lateinit var toggleVoiceChatButton: Button
-    private lateinit var peerConnection: PeerConnection
+    private var peerConnection: PeerConnection? = null
     private var audioTrack: AudioTrack? = null
     private var isMuted = false
     private var isVoiceChatEnabled = false
@@ -22,10 +22,10 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        serverUrlInput = findViewById(R.id.serverUrlInput)
+        serverUrlInput = findViewById(R.id.et_server_url)
         saveUrlButton = findViewById(R.id.saveUrlButton)
-        muteButton = findViewById(R.id.muteButton)
-        toggleVoiceChatButton = findViewById(R.id.toggleVoiceChatButton)
+        muteButton = findViewById(R.id.btn_mute)
+        toggleVoiceChatButton = findViewById(R.id.btn_enable_voice_chat)
 
         saveUrlButton.setOnClickListener {
             val serverUrl = serverUrlInput.text.toString()
@@ -45,7 +45,6 @@ class MainActivity : AppCompatActivity() {
             toggleVoiceChat()
         }
 
-        // Inisialisasi WebRTC
         val savedUrl = getSharedPreferences("appPrefs", MODE_PRIVATE).getString("serverUrl", "")
         if (!savedUrl.isNullOrEmpty()) {
             initializeWebRTC(savedUrl)
@@ -80,22 +79,26 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun toggleMute() {
-        audioTrack?.setEnabled(isMuted)
-        isMuted = !isMuted
-        muteButton.text = if (isMuted) "Unmute" else "Mute"
+        if (audioTrack != null) {
+            isMuted = !isMuted
+            audioTrack?.setEnabled(!isMuted)
+            muteButton.text = if (isMuted) getString(R.string.unmute) else getString(R.string.mute)
+        }
     }
 
     private fun toggleVoiceChat() {
         if (isVoiceChatEnabled) {
-            peerConnection.close()
+            peerConnection?.close()
             isVoiceChatEnabled = false
-            toggleVoiceChatButton.text = "Enable Voice Chat"
+            toggleVoiceChatButton.text = getString(R.string.enable_voice_chat)
         } else {
             val savedUrl = getSharedPreferences("appPrefs", MODE_PRIVATE).getString("serverUrl", "")
             if (!savedUrl.isNullOrEmpty()) {
                 initializeWebRTC(savedUrl)
                 isVoiceChatEnabled = true
-                toggleVoiceChatButton.text = "Disable Voice Chat"
+                toggleVoiceChatButton.text = getString(R.string.disable_voice_chat)
+            } else {
+                Toast.makeText(this, "Please set the server URL first", Toast.LENGTH_SHORT).show()
             }
         }
     }
