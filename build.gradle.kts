@@ -6,7 +6,7 @@ plugins {
 repositories {
     mavenCentral()
     google()
-    maven { url = uri("https://repo.papermc.io/repository/maven-public/") }
+    maven { url = uri("https://maven.maxhenkel.de") }
 }
 
 dependencies {
