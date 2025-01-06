@@ -9,6 +9,7 @@ plugins {
 dependencies {
     implementation("org.apache.commons:commons-text")
     implementation(project(":utilities"))
+    implementation("org.webrtc:google-webrtc:1.0.32006")
 }
 
 application {
