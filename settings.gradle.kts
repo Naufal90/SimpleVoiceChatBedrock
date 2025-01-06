@@ -11,3 +11,6 @@ pluginManagement {
         mavenCentral()
         }
 }
+
+rootProject.name = "SimpleVoiceChatBedrock"
+include("app", "list", "utilities")
