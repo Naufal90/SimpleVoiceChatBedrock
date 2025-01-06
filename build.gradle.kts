@@ -1,5 +1,6 @@
 plugins {
-    kotlin("jvm") version "1.9.10"
+    id("buildlogic.kotlin-common-conventions")  // Ini sudah mencakup plugin Kotlin
+    `java-library`
 }
 
 repositories {
