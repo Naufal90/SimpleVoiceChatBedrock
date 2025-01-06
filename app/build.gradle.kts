@@ -1,8 +1,8 @@
 // app/build.gradle.kts
 
 plugins {
-    id("com.android.application") version "7.4.2" // Tentukan versi plugin Android
-    kotlin("android") version "1.8.0" // Tentukan versi Kotlin
+    id("com.android.application")
+    kotlin("android")
 }
 
 android {
