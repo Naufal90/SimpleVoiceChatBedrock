@@ -1,21 +1,11 @@
 plugins {
-    kotlin("jvm") version "1.9.10" apply "false"
-    id("java-library")
+    kotlin("jvm") version "1.9.10" apply false
 }
 
 repositories {
-    maven {
-        name = "papermc"
-        url = uri("https://repo.papermc.io/repository/maven-public/")
-    }
+    mavenCentral()
+    maven { url = uri("https://repo.papermc.io/repository/maven-public/") }
 }
 
-dependencies {
-    compileOnly("io.papermc.paper:paper-api:1.20.1-R0.1-SNAPSHOT")
-}
-
-java {
-    toolchain {
-        languageVersion.set(JavaLanguageVersion.of(17))
-    }
-}
+rootProject.name = "SimpleVoiceChatBedrock"
+include("app", "list", "utilities")
