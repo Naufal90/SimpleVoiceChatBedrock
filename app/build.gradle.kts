@@ -6,12 +6,12 @@ plugins {
 }
 
 android {
-    compileSdkVersion(33) // Sesuaikan dengan versi SDK yang kamu gunakan
+    compileSdk = 33 // Sesuaikan dengan versi SDK yang kamu gunakan
 
     defaultConfig {
         applicationId = "com.naufal90.simplevoicechat"
-        minSdkVersion(29) // Sesuaikan dengan minimum SDK yang diperlukan
-        targetSdkVersion(33) // Sesuaikan dengan target SDK yang diinginkan
+        minSdkVersion = 29 // Sesuaikan dengan minimum SDK yang diperlukan
+        targetSdkVersion = 33 // Sesuaikan dengan target SDK yang diinginkan
         versionCode = 1
         versionName = "1.0"
         namespace = "com.naufal90.simplevoicechat"
