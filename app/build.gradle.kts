@@ -6,7 +6,7 @@ plugins {
 android {
     compileSdk = 33 // Mengganti compileSdkVersion dengan compileSdk
 
-    namespace = "com.naufal90.simplevoicechat" // Tambahkan namespace
+    namespace = "org.example.app" // Tambahkan namespace
 
     defaultConfig {
         applicationId = "com.naufal90.simplevoicechat"
