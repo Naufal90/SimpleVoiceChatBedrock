@@ -28,14 +28,17 @@ jobs:
     - name: Sync Gradle
       run: ./gradlew sync --no-daemon > build-log.txt 2>&1
 
+    - name: Display build log
+      run: cat build-log.txt
+
     - name: Build with Gradle
       run: ./gradlew clean --no-daemon --refresh-dependencies >> build-log.txt 2>&1
+
+    - name: Run Tests
+      run: ./gradlew test --no-daemon >> build-log.txt 2>&1
 
     - name: Upload build log
       uses: actions/upload-artifact@v3
       with:
         name: build-log
         path: build-log.txt
-
-    - name: Run Tests
-      run: ./gradlew test --no-daemon >> build-log.txt 2>&1
