@@ -4,9 +4,9 @@ plugins {
 }
 
 android {
-    compileSdk = 33 // Mengganti compileSdkVersion dengan compileSdk
+    compileSdk = 33
 
-    namespace = "org.example.app" // Tambahkan namespace
+    namespace = "org.example.app" // Sesuaikan dengan struktur direktori
 
     defaultConfig {
         applicationId = "org.example.app"
