@@ -14,6 +14,7 @@ android {
         targetSdkVersion(33) // Sesuaikan dengan target SDK yang diinginkan
         versionCode = 1
         versionName = "1.0"
+        namespace = "com.naufal90.simplevoicechat"
     }
 
     buildTypes {
