@@ -19,5 +19,5 @@ java {
 }
 
 android {
-    compileSdkVersion(33) 
+    compileSdk = 33
 }
