@@ -22,25 +22,20 @@ jobs:
         distribution: 'adopt'
         java-version: '17'
 
-    # Hapus bagian cache sementara untuk mendiagnosis masalah duplikasi
-    # - name: Cache Gradle dependencies
-    #   uses: actions/cache@v2
-    #   with:
-    #     path: |
-    #       ~/.gradle/caches
-    #       ~/.gradle/wrapper
-    #     key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*', '**/gradle-wrapper.properties') }}
-    #     restore-keys: |
-    #       ${{ runner.os }}-gradle-
-
     - name: Grant execute permission for gradlew
       run: chmod +x ./gradlew
 
     - name: Sync Gradle
-      run: ./gradlew sync --stacktrace > build-log.txt
+      run: ./gradlew sync --no-daemon > build-log.txt 2>&1
 
     - name: Build with Gradle
-      run: ./gradlew clean --no-daemon --refresh-dependencies
+      run: ./gradlew clean --no-daemon --refresh-dependencies >> build-log.txt 2>&1
+
+    - name: Upload build log
+      uses: actions/upload-artifact@v3
+      with:
+        name: build-log
+        path: build-log.txt
 
     - name: Run Tests
-      run: ./gradlew test --no-daemon
+      run: ./gradlew test --no-daemon >> build-log.txt 2>&1
