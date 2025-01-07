@@ -14,11 +14,11 @@ android {
         targetSdk = 33
         versionCode = 1
         versionName = "1.0"
-        namespace = "com.naufal90.simplevoicechat"  // Pastikan ada baris ini
+        namespace = "com.naufal90.simplevoicechat"  // Tambahkan baris ini
     }
 
     buildTypes {
-        release {
+        getByName("release") {
             isMinifyEnabled = false
             proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
         }
