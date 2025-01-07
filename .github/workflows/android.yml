@@ -37,7 +37,7 @@ jobs:
       run: chmod +x ./gradlew
 
     - name: Build with Gradle
-      run: ./gradlew clean build --no-build-cache
+      run: ./gradlew clean --no-daemon --refresh-dependencies
 
     - name: Run Tests
       run: ./gradlew test --no-daemon
