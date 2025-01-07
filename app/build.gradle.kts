@@ -9,7 +9,7 @@ android {
     namespace = "org.example.app" // Tambahkan namespace
 
     defaultConfig {
-        applicationId = "com.naufal90.simplevoicechat"
+        applicationId = "org.example.app"
         minSdkVersion(29)
         targetSdkVersion(33)
         versionCode = 1
