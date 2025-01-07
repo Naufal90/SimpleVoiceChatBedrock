@@ -6,19 +6,19 @@ plugins {
 }
 
 android {
-    compileSdk = 33 // Sesuaikan dengan versi SDK yang kamu gunakan
+    compileSdk = 33
 
     defaultConfig {
         applicationId = "com.naufal90.simplevoicechat"
-        minSdkVersion = 29 // Sesuaikan dengan minimum SDK yang diperlukan
-        targetSdkVersion = 33 // Sesuaikan dengan target SDK yang diinginkan
+        minSdk = 29
+        targetSdk = 33
         versionCode = 1
         versionName = "1.0"
-        namespace = "com.naufal90.simplevoicechat"
+        namespace = "com.naufal90.simplevoicechat"  // Pastikan ada baris ini
     }
 
     buildTypes {
-        getByName("release") {
+        release {
             isMinifyEnabled = false
             proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
         }
