@@ -17,3 +17,7 @@ java {
         languageVersion.set(JavaLanguageVersion.of(17))
     }
 }
+
+android {
+    compileSdkVersion(33) 
+}
