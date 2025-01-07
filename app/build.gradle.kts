@@ -26,6 +26,7 @@ android {
 
 repositories {
     mavenCentral()
+    google()
     maven("https://repo.papermc.io/repository/maven-public/")
 }
 
