@@ -37,7 +37,7 @@ jobs:
       run: chmod +x ./gradlew
 
     - name: Sync Gradle
-      run: ./gradlew sync --stacktrace
+      run: ./gradlew sync --stacktrace > build-log.txt
 
     - name: Build with Gradle
       run: ./gradlew clean --no-daemon --refresh-dependencies
