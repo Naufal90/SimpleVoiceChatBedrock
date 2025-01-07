@@ -1,5 +1,6 @@
 plugins {
     id("com.android.application") version "8.1.0"
+    id("org.jetbrains.kotlin.android")
 }
 
 repositories {
